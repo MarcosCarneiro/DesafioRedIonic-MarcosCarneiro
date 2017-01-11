@@ -26,21 +26,21 @@
   </div>
 
   <ion-row class="home-buttons">
-    <ion-col></ion-col>
+    <ion-col>
+      <button ion-fab mini (click)="backLastCard()"><ion-icon color="danger" name="refresh"></ion-icon></button>
+    </ion-col>
 
     <ion-col>
       <button ion-fab (click)="voteUp(false)"><ion-icon color="danger" name="close"></ion-icon></button>
     </ion-col>
 
     <ion-col>
-      <button ion-fab><ion-icon color="primary" name="star"></ion-icon></button>
-    </ion-col>
-
-    <ion-col>
       <button ion-fab (click)="voteUp(true)"><ion-icon color="secondary" name="heart"></ion-icon></button>
     </ion-col>
 
-    <ion-col></ion-col>
+    <ion-col>
+      <button ion-fab mini><ion-icon color="primary" name="star"></ion-icon></button>
+    </ion-col>
   </ion-row>
 
 </ion-content>

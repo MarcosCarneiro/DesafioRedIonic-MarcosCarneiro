@@ -19,6 +19,7 @@ export class HomePage {
 
 	cards: Array<any>;
 	stackConfig: StackConfig;
+  removedCard: any;
 	recentCard: string = '';
 
   constructor(public navCtrl: NavController, private http: Http) {
@@ -62,12 +63,12 @@ export class HomePage {
 
 	voteUp(like: boolean) {
     if(this.cards.length > 0){
-        let removedCard = this.cards.shift();
+        this.removedCard = this.cards.shift();
 
         if (like) {
-          this.recentCard = 'Você gostou de: ' + removedCard.email;
+          this.recentCard = 'Você gostou de: ' + this.removedCard.email;
         } else {
-          this.recentCard = 'Você não gostou de: ' + removedCard.email;
+          this.recentCard = 'Você não gostou de: ' + this.removedCard.email;
         }
 
     }
@@ -87,6 +88,12 @@ export class HomePage {
 	    }
 	  })
 	}
+
+  backLastCard() {
+    if(!(typeof (this.removedCard) === 'undefined' || this.removedCard === null)) {
+        this.cards.unshift(this.removedCard);
+    }
+  }
 
 	decimalToHex(d, padding) {
 	  var hex = Number(d).toString(16);
