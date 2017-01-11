@@ -92,6 +92,7 @@ export class HomePage {
   backLastCard() {
     if(!(typeof (this.removedCard) === 'undefined' || this.removedCard === null)) {
         this.cards.unshift(this.removedCard);
+        this.removedCard = null;
     }
   }
 
