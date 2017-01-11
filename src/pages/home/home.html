@@ -7,8 +7,40 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div id="card-stack" class="z-index-home" swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)">
+
+    <ion-card #mycards1 swing-card *ngFor="let c of cards; trackBy: trackByCards; let i = index" [style.zIndex]= "-1 * i">
+
+      <div>
+        <img *ngIf="c.picture" [src]="c.picture.large" />
+      </div>
+
+      <ion-card-content *ngIf="c.picture">
+          <p>{{ c.name.first }} {{ c.name.last }}</p>
+          <p>{{ c.location.city}}</p>
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+  <ion-row class="home-buttons">
+    <ion-col></ion-col>
+
+    <ion-col>
+      <button ion-fab (click)="voteUp(false)"><ion-icon color="danger" name="close"></ion-icon></button>
+    </ion-col>
+
+    <ion-col>
+      <button ion-fab><ion-icon color="primary" name="star"></ion-icon></button>
+    </ion-col>
+
+    <ion-col>
+      <button ion-fab (click)="voteUp(true)"><ion-icon color="secondary" name="heart"></ion-icon></button>
+    </ion-col>
+
+    <ion-col></ion-col>
+  </ion-row>
+
 </ion-content>
