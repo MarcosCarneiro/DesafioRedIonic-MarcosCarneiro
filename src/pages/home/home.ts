@@ -9,6 +9,8 @@ import {
   SwingStackComponent,
   SwingCardComponent} from 'angular2-swing';
 
+import { User } from '../../model/user';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
