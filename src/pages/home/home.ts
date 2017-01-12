@@ -19,9 +19,9 @@ export class HomePage {
 	@ViewChild('myswing1') swingStack: SwingStackComponent;
 	@ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
-	cards: Array<any>;
+	cards: Array<User>;
 	stackConfig: StackConfig;
-  removedCard: any;
+  removedCard = new User();
 	recentCard: string = '';
 
   constructor(public navCtrl: NavController, private http: Http) {
@@ -68,17 +68,19 @@ export class HomePage {
         this.removedCard = this.cards.shift();
 
         if (like) {
-          this.recentCard = 'Você gostou de: ' + this.removedCard.email;
+          this.recentCard = 'Você gostou de: ' + this.removedCard.getEmail();
         } else {
-          this.recentCard = 'Você não gostou de: ' + this.removedCard.email;
+          this.recentCard = 'Você não gostou de: ' + this.removedCard.getEmail();
         }
+
+        console.log(this.recentCard);
 
     }
     this.addNewCards(1);
 	}
 
   trackByCards(index: number, card: any) {
-    return card.email;
+    return card.getEmail();
   }
 
 	addNewCards(count: number) {
@@ -86,15 +88,29 @@ export class HomePage {
 	  .map(data => data.json().results)
 	  .subscribe(result => {
 	    for (let val of result) {
-	      this.cards.push(val);
+        let card = new User();
+
+        let DayOfBirth = new Date(val.dob).getTime();
+        let currentDate = new Date().getTime();
+        let year = (1000*60*60*24*365);
+        let age = Math.floor((currentDate - DayOfBirth)/year);
+
+        card.setName(val.name.first);
+        card.setEmail(val.email);
+        card.setGender(val.gender);
+        card.setCity(val.location.city);
+        card.setPicture(val.picture.large);
+        card.setAge(age);
+
+	      this.cards.push(card);
 	    }
 	  })
 	}
 
   backLastCard() {
-    if(!(typeof (this.removedCard) === 'undefined' || this.removedCard === null)) {
+    if(!(typeof (this.removedCard.getEmail()) === 'undefined' || this.removedCard.getEmail() === '')) {
         this.cards.unshift(this.removedCard);
-        this.removedCard = null;
+        this.removedCard.setEmail('');
     }
   }
 

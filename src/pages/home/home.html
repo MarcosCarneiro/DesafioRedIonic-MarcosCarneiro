@@ -35,12 +35,12 @@
     <ion-card #mycards1 swing-card *ngFor="let c of cards; trackBy: trackByCards; let i = index" [style.zIndex]= "-1 * i">
 
       <div>
-        <img *ngIf="c.picture" [src]="c.picture.large" />
+        <img *ngIf="c.getPicture()" [src]="c.getPicture()" />
       </div>
 
-      <ion-card-content *ngIf="c.picture">
-          <h2>{{ c.name.first }} {{ c.name.last }}</h2>
-          <h3>{{ c.location.city}}</h3>
+      <ion-card-content *ngIf="c.getPicture()">
+          <h2>{{ c.getName() }}, {{ c.getAge() }}</h2>
+          <h3>{{ c.getCity() }}</h3>
       </ion-card-content>
 
     </ion-card>
