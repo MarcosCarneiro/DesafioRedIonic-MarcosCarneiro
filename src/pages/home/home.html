@@ -39,8 +39,8 @@
       </div>
 
       <ion-card-content *ngIf="c.picture">
-          <p>{{ c.name.first }} {{ c.name.last }}</p>
-          <p>{{ c.location.city}}</p>
+          <h2>{{ c.name.first }} {{ c.name.last }}</h2>
+          <h3>{{ c.location.city}}</h3>
       </ion-card-content>
 
     </ion-card>
@@ -49,19 +49,19 @@
 
   <ion-row class="home-buttons">
     <ion-col>
-      <button ion-fab mini (click)="backLastCard()"><ion-icon color="danger" name="refresh"></ion-icon></button>
+      <button ion-fab mini (click)="backLastCard()"><ion-icon color="btn-return" name="ios-refresh"></ion-icon></button>
     </ion-col>
 
     <ion-col>
-      <button ion-fab (click)="voteUp(false)"><ion-icon color="danger" name="close"></ion-icon></button>
+      <button ion-fab (click)="voteUp(false)"><ion-icon color="flame-color" name="close"></ion-icon></button>
     </ion-col>
 
     <ion-col>
-      <button ion-fab (click)="voteUp(true)"><ion-icon color="secondary" name="heart"></ion-icon></button>
+      <button ion-fab (click)="voteUp(true)"><ion-icon color="btn-like" name="heart"></ion-icon></button>
     </ion-col>
 
     <ion-col>
-      <button ion-fab mini><ion-icon color="primary" name="star"></ion-icon></button>
+      <button ion-fab mini><ion-icon color="btn-star" name="star"></ion-icon></button>
     </ion-col>
   </ion-row>
 

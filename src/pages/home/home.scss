@@ -6,8 +6,7 @@ page-home {
 
   #card-stack {
     width: 100%;
-    margin: 0 0 5px 0;
-    height: 80%;
+    height: 85%;
     z-index: -15;
     position: relative;
   }
@@ -46,8 +45,8 @@ page-home {
     border: 1px solid color($colors, icon-color);
   }
 
-  .home-buttons button{
-    background: color($colors, light);
+  .home-buttons button {
+    background: color($colors, clean-color);
   }
 
   .home-buttons ion-icon {
