@@ -44,6 +44,7 @@ export class HomePage {
 	  });
 
     this.cards = [];
+    this.removedCard.setEmail('');
 	  this.addNewCards(10);
 	}
 
@@ -109,8 +110,17 @@ export class HomePage {
 
   backLastCard() {
     if(!(typeof (this.removedCard.getEmail()) === 'undefined' || this.removedCard.getEmail() === '')) {
-        this.cards.unshift(this.removedCard);
-        this.removedCard.setEmail('');
+      let card = new User();
+
+      card.setName(this.removedCard.getName());
+      card.setEmail(this.removedCard.getEmail());
+      card.setGender(this.removedCard.getGender());
+      card.setCity(this.removedCard.getCity());
+      card.setPicture(this.removedCard.getPicture());
+      card.setAge(this.removedCard.getAge());
+      this.cards.unshift(card);
+
+      this.removedCard.setEmail('');
     }
   }
 
