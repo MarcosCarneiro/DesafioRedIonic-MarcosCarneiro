@@ -1,0 +1,41 @@
+page-tabs {
+
+  .navbar-buttons {
+    text-align: center;
+  }
+
+  .navbar-buttons ion-icon {
+    font-size: 30px;
+    color: color($colors, icon-color);
+  }
+
+  .double-button {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+  }
+
+  .d-btn-border {
+    border: 1px solid color($colors, icon-color);
+  }
+
+  .selected-menu ion-icon {
+    color: color($colors, flame-color);
+  }
+
+  .d-btn-selected-menu {
+    background: color($colors, flame-color);
+  }
+
+  .d-btn-selected-menu ion-icon {
+    color: color($colors, clean-color);
+  }
+
+  ion-tabs {
+    z-index: -1 !important;
+    position: absolute !important;
+  }
+
+}

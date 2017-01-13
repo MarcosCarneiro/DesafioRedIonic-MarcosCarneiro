@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar class="navbar-buttons">
+      <ion-row center>
+
+        <ion-col [ngClass]="{'selected-menu': (indexOfTab === PERFIL)}" width-33>
+          <ion-icon name="md-contact" (click)="callPagePerfil()"></ion-icon>
+        </ion-col>
+
+        <ion-col width-33>
+          <ion-row class="double-button d-btn-border">
+
+            <ion-col [ngClass]="{'d-btn-selected-menu': (indexOfTab === HOME)}" class="double-button">
+              <ion-icon name="md-flame" (click)="callPageHome()"></ion-icon>
+            </ion-col>
+
+            <ion-col [ngClass]="{'d-btn-selected-menu': (indexOfTab === GROUPS)}" class="double-button">
+              <ion-icon name="ios-people" (click)="callPageGroups()"></ion-icon>
+            </ion-col>
+
+          </ion-row>
+        </ion-col>
+
+        <ion-col [ngClass]="{'selected-menu': (indexOfTab === CHAT)}" width-33>
+          <ion-icon name="ios-chatbubbles" (click)="callPageChat()"></ion-icon>
+        </ion-col>
+
+      </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs #myTabs [selectedIndex]="HOME" tabsPlacement="top">
+  <ion-tab [root]="tab1Root"></ion-tab>
+  <ion-tab [root]="tab2Root"></ion-tab>
+  <ion-tab [root]="tab3Root"></ion-tab>
+</ion-tabs>
