@@ -24,35 +24,6 @@ page-home {
     box-shadow: 0px 1px 5px 0px rgba(105,104,105,0.5);
   }
 
-  .navbar-buttons {
-    text-align: center;
-  }
-
-  .navbar-buttons ion-icon {
-    font-size: 30px;
-    color: color($colors, icon-color);
-  }
-
-  .double-button {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
-  }
-
-  .selected-menu {
-    background: color($colors, flame-color);
-  }
-
-  .selected-menu ion-icon {
-    color: color($colors, clean-color);
-  }
-
-  .d-btn-border {
-    border: 1px solid color($colors, icon-color);
-  }
-
   .home-buttons button {
     background: color($colors, clean-color);
   }
