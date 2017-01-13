@@ -1,33 +1,3 @@
-<ion-header>
-  <ion-navbar class="navbar-buttons">
-    <ion-row center>
-
-      <ion-col width-33>
-        <ion-icon name="contact"></ion-icon>
-      </ion-col>
-
-      <ion-col width-33>
-        <ion-row class="double-button d-btn-border">
-
-          <ion-col class="double-button selected-menu">
-            <ion-icon name="md-flame"></ion-icon>
-          </ion-col>
-
-          <ion-col class="double-button">
-            <ion-icon name="ios-people"></ion-icon>
-          </ion-col>
-
-        </ion-row>
-      </ion-col>
-
-      <ion-col width-33>
-        <ion-icon name="ios-chatbubbles"></ion-icon>
-      </ion-col>
-
-    </ion-row>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
 
   <div id="card-stack" class="z-index-home" swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)">
