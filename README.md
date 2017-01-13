@@ -1,6 +1,6 @@
 # DesafioRedIonic-MarcosCarneiro
 
-Para exutar em seu computador digite:
+Para executar em seu computador digite:
 
 git clone https://github.com/MarcosCarneiro/DesafioRedIonic-MarcosCarneiro.git
 
