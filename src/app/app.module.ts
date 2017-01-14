@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SlideModal } from '../pages/slide-modal/slide-modal';
 
 import { SwingModule } from 'angular2-swing';
 
@@ -14,7 +15,8 @@ import { SwingModule } from 'angular2-swing';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SlideModal
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -26,7 +28,8 @@ import { SwingModule } from 'angular2-swing';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SlideModal
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
