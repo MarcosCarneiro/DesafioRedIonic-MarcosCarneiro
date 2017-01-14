@@ -24,18 +24,22 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222,
-  panel: #f8fafc,
-  icon-color: #dadfe6,
-  clean-color: #ffffff,
-  btn-return: #ffbd03,
-  flame-color: #fe5067,
-  btn-like: #42eac2,
-  btn-star: #22baff
+  primary:        #387ef5,
+  secondary:      #32db64,
+  danger:         #f53d3d,
+  light:          #f4f4f4,
+  dark:           #222,
+  panel:          #f8fafc,
+  icon-color:     #dadfe6,
+  clean-color:    #ffffff,
+  btn-return:     #ffbd03,
+  flame-color:    #fe5067,
+  btn-like:       #42eac2,
+  btn-star:       #22baff,
+  config-color:   #f16464,
+  deslike-modal:  #ee6c49,
+  star-modal:     #3ba4ff,
+  like-modal:     #4ccc92
 );
 
 
