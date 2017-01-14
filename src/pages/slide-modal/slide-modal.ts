@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 
 @Component({
@@ -8,6 +8,12 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SlideModal {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, private navParams: NavParams, private viewCtrl: ViewController) {
+    console.log('User Picture: ' + navParams.get('userPicture'));
+  }
+
+  dismiss(){
+    this.viewCtrl.dismiss('testDismiss');
+  }
 
 }

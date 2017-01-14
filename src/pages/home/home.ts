@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 
@@ -10,6 +10,7 @@ import {
   SwingCardComponent} from 'angular2-swing';
 
 import { User } from '../../model/user';
+import { SlideModal } from '../slide-modal/slide-modal';
 
 @Component({
   selector: 'page-home',
@@ -24,7 +25,7 @@ export class HomePage {
   removedCard = new User();
 	recentCard: string = '';
 
-  constructor(public navCtrl: NavController, private http: Http) {
+  constructor(public navCtrl: NavController, private http: Http, private modalCtrl: ModalController) {
     this.stackConfig = {
   	  throwOutConfidence: (offset, element) => {
   	    return Math.min(Math.abs(offset) / (element.offsetWidth/2), 1);
@@ -107,6 +108,15 @@ export class HomePage {
 	    }
 	  })
 	}
+
+  presentSlideModal(picture: string) {
+    //TO DO: passar foto do usuário como parametro e receber o voto do usuário, caso ele vote
+    let slideModal = this.modalCtrl.create(SlideModal, { userPicture: picture });
+    slideModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    slideModal.present();
+  }
 
   backLastCard() {
     if(!(typeof (this.removedCard.getEmail()) === 'undefined' || this.removedCard.getEmail() === '')) {
