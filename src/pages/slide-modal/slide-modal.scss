@@ -1,3 +1,29 @@
 page-slide-modal {
 
+  ion-slides {
+    background-color: black;
+    height: 50%;
+    width: 100%;
+  }
+
+  ion-card {
+    padding-left: 0;
+    padding-right: 0;
+    height: 20%;
+    width: 100%;
+  }
+
+  .modal-buttons {
+    margin-left: 5%;
+  }
+
+  ion-icon {
+    font-size: 36px;
+  }
+
+  .modal-buttons ion-icon {
+    font-size: 36px;
+    color: color($colors, clean-color);
+  }
+
 }

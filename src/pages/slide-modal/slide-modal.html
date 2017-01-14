@@ -1,26 +1,57 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons>
-      <button ion-button only-icon (click)="dismiss()">
-        <ion-icon name="ios-arrow-back"></ion-icon>
+      <button ion-button only-icon (click)="close()">
+        <ion-icon name="ios-arrow-back" color="config-color"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
   <ion-slides pager>
-    <ion-slide>
-      <h1>Slide 1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide" />
     </ion-slide>
   </ion-slides>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row center>
+
+        <ion-col width-80>
+          <h2>{{ card.getName() }}, {{ card.getAge() }}</h2>
+          <h2>{{ card.getCity() }}</h2>
+        </ion-col>
+
+        <ion-col width-10 align="right">
+          <ion-icon name="share" color="config-color"></ion-icon>
+        </ion-col>
+
+        <ion-col width-10 align="right">
+          <ion-icon name="more" color="icon-color"></ion-icon>
+        </ion-col>
+
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row center class="modal-buttons">
+
+    <ion-col>
+      <button ion-fab color="deslike-modal" (click)="dismiss(false)"><ion-icon name="close"></ion-icon></button>
+    </ion-col>
+
+    <ion-col>
+      <button ion-fab color="star-modal"><ion-icon name="star"></ion-icon></button>
+    </ion-col>
+
+    <ion-col>
+      <button ion-fab color="like-modal" (click)="dismiss(true)"><ion-icon name="heart"></ion-icon></button>
+    </ion-col>
+
+  </ion-row>
 
 </ion-content>
