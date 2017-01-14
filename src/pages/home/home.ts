@@ -109,17 +109,20 @@ export class HomePage {
 	  })
 	}
 
-  presentSlideModal(picture: string) {
+  presentSlideModal(user: User) {
     //TO DO: passar foto do usuário como parametro e receber o voto do usuário, caso ele vote
-    let slideModal = this.modalCtrl.create(SlideModal, { userPicture: picture });
-    slideModal.onDidDismiss(data => {
-      console.log(data);
+    let slideModal = this.modalCtrl.create(SlideModal, { card: user });
+    slideModal.onDidDismiss(vote => {
+      if(vote !== undefined && vote !== null) {
+        console.log(vote);
+        this.voteUp(vote);
+      }
     });
     slideModal.present();
   }
 
   backLastCard() {
-    if(!(typeof (this.removedCard.getEmail()) === 'undefined' || this.removedCard.getEmail() === '')) {
+    if(!(typeof (this.removedCard.getEmail()) === undefined || this.removedCard.getEmail() === '')) {
       let card = new User();
 
       card.setName(this.removedCard.getName());
@@ -136,7 +139,7 @@ export class HomePage {
 
 	decimalToHex(d, padding) {
 	  var hex = Number(d).toString(16);
-	  padding = typeof (padding) === "undefined" || padding === null ? 2 : padding;
+	  padding = typeof (padding) === undefined || padding === null ? 2 : padding;
 
 	  while (hex.length < padding) {
 	    hex = "0" + hex;
