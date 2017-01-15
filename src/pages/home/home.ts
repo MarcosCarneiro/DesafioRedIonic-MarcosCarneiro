@@ -110,11 +110,9 @@ export class HomePage {
 	}
 
   presentSlideModal(user: User) {
-    //TO DO: passar foto do usuário como parametro e receber o voto do usuário, caso ele vote
     let slideModal = this.modalCtrl.create(SlideModal, { card: user });
     slideModal.onDidDismiss(vote => {
       if(vote !== undefined && vote !== null) {
-        console.log(vote);
         this.voteUp(vote);
       }
     });
